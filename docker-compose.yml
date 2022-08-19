@@ -1,0 +1,15 @@
+version: "3.7"
+
+services:
+  safelabs-back-py:
+    container_name: safelabs-back-py
+    environment:
+      - PORT=${PORT:-3002}
+      - WEATHER_API_KEY
+      - SPOTIFY_API_ID
+      - SPOTIFY_API_SECRET
+    build:
+      context: .
+      dockerfile: DockerFile
+    ports:
+      - "${PORT:-3002}:${PORT:-3002}"
